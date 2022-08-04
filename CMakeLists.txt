@@ -1,11 +1,22 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(Calulator_Project VERSION 1.0.0)
+set(TARGET_NAME Mathemetics)
 
-add_subdirectory(my_math)
-add_subdirectory(my_print)
+# Read ReadMe.docx
+#set(CMAKE_C_COMPILER "gcc" )
+#set(CMAKE_CXX_COMPILER "g++")
 
-add_executable(calculator
-main.cpp)
+project(${TARGET_NAME} VERSION 1.0.0)
 
-target_link_libraries(calculator PRIVATE my_math my_print)
+add_subdirectory(src/my_math)
+add_subdirectory(src/my_print)
+
+add_executable(${TARGET_NAME} 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+)
+
+target_link_libraries(${TARGET_NAME}
+    PRIVATE 
+    math 
+    print
+)
