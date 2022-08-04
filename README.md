@@ -1,2 +1,2 @@
-# MyCMake
-This is basic example to demonstrate the CMake
+# CMAKE_VS
+This is example to demonstrate the CMake Build System with Visual Studio generator.
